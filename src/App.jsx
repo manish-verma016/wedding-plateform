@@ -1,8 +1,12 @@
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { motion, AnimatePresence } from 'motion/react';
+
 import { AuthProvider } from './lib/AuthContext';
+
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
 import Home from './pages/Home';
 import AIPlanner from './pages/AIPlanner';
 import Services from './pages/Services';
@@ -19,10 +23,9 @@ import AstroTools from './pages/AstroTools';
 import Invitations from './pages/Invitations';
 import GuestInvitation from './pages/GuestInvitation';
 
-import Footer from './components/Footer';
-
 function PageLayout({ children }) {
   const location = useLocation();
+
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -42,8 +45,9 @@ export default function App() {
   return (
     <AuthProvider>
       <Router>
-        <div className="min-h-screen bg-gray-50 flex flex-col font-sans selection:bg-pink-100 selection:text-pink-600">
+        <div className="min-h-screen bg-gray-50 flex flex-col font-sans">
           <Navbar />
+
           <main className="flex-grow">
             <Routes>
               <Route path="/" element={<PageLayout><Home /></PageLayout>} />
@@ -63,10 +67,11 @@ export default function App() {
               <Route path="/invite/:id" element={<GuestInvitation />} />
             </Routes>
           </main>
-      <Footer />
-    </div>
-    <Toaster position="bottom-right" />
-  </Router>
-</AuthProvider>
+
+          <Footer />
+          <Toaster position="bottom-right" />
+        </div>
+      </Router>
+    </AuthProvider>
   );
 }
