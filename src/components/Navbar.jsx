@@ -62,6 +62,17 @@ export default function Navbar() {
       <div className="max-w-[1600px] mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           <Link to="/" className="flex items-center space-x-3 group">
+            <img 
+    src="glogo.png" 
+    alt="Gathbandhan Logo" 
+                className="w-36 h-20 
+              object-contain
+               rounded-lg 
+               transition-all duration-300 ease-in-out 
+               group-hover:rounded-[50%] 
+               group-hover:scale-225"
+                
+  />
             <Heart className="w-8 h-8 text-pink-600 fill-pink-600 group-hover:scale-110 transition-transform" />
             <span className="text-2xl font-black tracking-tight text-gray-900 font-serif">Gathbandhan</span>
           </Link>
