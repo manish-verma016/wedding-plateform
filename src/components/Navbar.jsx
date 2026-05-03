@@ -63,7 +63,7 @@ export default function Navbar() {
         <div className="flex justify-between h-20 items-center">
           <Link to="/" className="flex items-center space-x-3 group">
             <img 
-    src="/glogo.png" 
+    src="public/glogo.png" 
     alt="Gathbandhan Logo" 
                 className="w-36 h-20 
               object-contain
